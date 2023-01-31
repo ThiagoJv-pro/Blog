@@ -1,22 +1,13 @@
 body {
-  background-image: url("../images/background.png");
-  background-attachment: fixed;
-  background-size: 100%;
-  color: white;
-  background-color: black;
+  
+  
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-
-
-a {
-  color: #00B7FF;
-}
-
-.c1{
-  background-color: black;
-}
-
-.col{
-  height: 100%;
+main{
+  background-image: url("../images/background.png");
+  background-attachment: fixed;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white;
 }
