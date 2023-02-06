@@ -1,42 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-   
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <style>
-    
-    </style>
-  </head>
-  <body style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; background-attachment: fixed;   background-size: cover;
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <style>
+
+  </style>
+</head>
+
+<body style="text-align: center; color: white; position: relative; left: 0; right: 0; top: 0; bottom: 0; background-image: url('/images/backgroundhome.png'); background-attachment: fixed;   background-size: cover;
   background-repeat: no-repeat;">
-  
-    <main style="margin-top: 100px; ">
-        <div class="container-fluid">
-          <div class="row align-items-center">
-              <div class="col" style="align-items: center;">
-              <div class="container-fluid" style="align-content: center">
-                <h1>Tela de Postagem</h1>
-              </div>    
-                  <form action="/newpost" method="post">
-                    <div class="form-group">
-                      <label for="title"> Insira um titulo</label>
-                      <input type="text" name="title" class="form-control" id="title" aria-describedby="titleHelp" placeholder="Insira um titulo para sua postagem">
-                    </div>
-                    <div class="form-group">
-                      <label for="subtitle">Insira um subtitulo</label>
-                      <input type="text" name="subtitle" class="form-control" id="subtitle" aria-describedby="subtitleHelp" placeholder="Insira um subtitulo para seu post">
-                    </div>
-                    <div class="form-group">
-                        <label for="content"> Insira o conteudo</label>
-                        <textarea type="text" name="content" class="form-control" id="content" aria-describedby="contentHelp" placeholder="Insira o conteudo da sua postagem"></textarea> 
-                    </div>
-                    <button type="submit" class="btn btn-primary">Postar</button>
-                  </form>
-              </div>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="/home"> Bnout Blog </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto py-4 py-lg-0">
+          <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/homepage"> Home </a></li>
+          <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#"> Home </a></li>
+          <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#"> Home </a></li>
+          <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#"> Home </a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <header>
+    <div></div>
+  </header>
+  <main>
+
+    <div class="container px-4 px-lg-5" style="padding: 50px;" >
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-x1-7">
+          <div class="post-preview">
+              <h1><%= doc.title %></h1>
+              <h2 ><%= doc.subtitle %></h2>
+              <h3 style="font-size: 20px;"> <%= doc.content %></h3>
           </div>
         </div>
-    
-    </main>
-  </body>
+      </div>
+  </main>
+</body>
+
 </html>

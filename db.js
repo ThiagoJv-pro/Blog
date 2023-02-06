@@ -18,11 +18,13 @@ connection.once("Open", () => {
     console.log("Connection Successfuly");
 });
 
+
 const postSchema = new schema({
     title: String,
     subtitle: String,
     content: String,
-    date: String
+    date: String,
+    count: {type: Number, default:0}
 }, {collection: "posts"});
 
 const registerPost = mongoose.model("registerPost", postSchema);

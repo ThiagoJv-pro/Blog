@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <style>
+
+    </style>
+</head>
+
+<body style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; background-attachment: fixed;   background-size: cover;
+  background-repeat: no-repeat;">
+
+    <main style="margin-top: 20px; ">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+
+                <div class="col" style="align-items: center;">
+                    <div class="container-fluid" style="align-content: center">
+                        <h1>Insira uma nova postagem</h1>
+                    </div>
+                    <form action="/newpost" method="post">
+                        <div class="form-group " style="padding: 20px;">
+                            <label for="title">Insira o Titulo do seu artigo</label>
+                            <input type="text" name="title" value="<%= title %>" class="form-control" id="title" aria-describedby="titleHelp"
+                                placeholder="Insira o titulo do seu artigo">
+                        </div>
+
+                        <div class="form-group" style="padding: 20px;">
+                            <label for="subtitle">Insira um subtitulo para o seu artigo</label>
+                            <input type="subtitle" value="<%= subtitle %>" name="subtitle" class="form-control" id="subtitle"
+                                aria-describedby="subtitleHelp" placeholder="Insira o subtitulo para seu artigo">
+                        </div>
+
+                        <div class="form-group" style="padding: 20px;">
+
+                            <label for="password">Conteudo do seu post</label>
+                            <textarea rows="20" type="content" name="content" class="form-control" id="content"
+                                aria-describedby="contentHelp"
+                                placeholder="Insira o conteudo da sua postagem"><%= content %></textarea>
+                            <button type="submit" class="btn btn-primary" style="padding: 20px;">Cadastrar</button>
+                        </div>
+
+                    </form>
+                    <button onclick="grammarCorrection()" class="btn btn-primary" style="padding: 20px;">Correcao
+                        Gramatical</button>
+                    <script>
+                        function grammarCorrection() {
+                            document.getElementById("content").value = "<%= content %>";
+                            console.log("feito");
+                            
+                        }
+                    </script>
+
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

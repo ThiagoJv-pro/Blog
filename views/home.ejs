@@ -21,8 +21,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#"> Home </a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#"> Home </a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/homepage"> Home </a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/newpost"> New Post </a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#"> Home </a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#"> Home </a></li>
                     </ul>
@@ -40,55 +40,53 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-x1-7">
                     <div class="post-preview">
-                        <a href="post.html">
-
-                           
-                            <h2 class="post-title"></h2>
-                            <h4 class="post-subtitle"></h4>
+                        <a href="/content/<%= doc1._id%>"> 
+                            <h2 class="post-title"><%= doc1.title %></h2>
+                            <h4 class="post-subtitle"><%= doc1.subtitle %></h4>
                             
                         </a>
                         
                         <p class="post-meta">
                             Posted by
                             <a href="#!">Start Bootstrap</a>
-                            on September 24, 2022
+                            on <%= doc1.date %>
                         </p>
                     </div>
                     
                     <hr class="my-4" />
                     <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title"></h2>
-                            <h4 class="post-subtitle"></h4>
+                        <a href="/content/<%= doc2._id%>">
+                            <h2 class="post-title"><%= doc2.title%></h2>
+                            <h4 class="post-subtitle"><%= doc2.subtitle %></h4>
                         </a>
                         <p class="post-meta">
                             Posted by
                             <a href="#!">Start Bootstrap</a>
-                            on September 24, 2022
+                            on <%= doc2.date %>
                         </p>
                     </div>
                     <hr class="my-4" />
                     <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                            <h4 class="post-subtitle">Problems look mighty small from 150 miles up</h4>
+                        <a href="/content/<%= doc3._id%>">
+                            <h2 class="post-title"><%= doc3.title%></h2>
+                            <h4 class="post-subtitle"><%= doc3.subtitle %></h4>
                         </a>
                         <p class="post-meta">
                             Posted by
                             <a href="#!">Start Bootstrap</a>
-                            on September 24, 2022
+                            on <%= doc3.date %>
                         </p>
                     </div>
                     <hr class="my-4" />
                     <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                            <h4 class="post-subtitle">Problems look mighty small from 150 miles up</h4>
+                        <a href="/content/<%= doc4._id%>">
+                            <h2 class="post-title"><%= doc4.title%></h2>
+                            <h4 class="post-subtitle"><%= doc4.subtitle %></h4>
                         </a>
                         <p class="post-meta">
                             Posted by
                             <a href="#!">Start Bootstrap</a>
-                            on September 24, 2022
+                            on <%= doc4.date %>
                         </p>
                     </div>
                     
