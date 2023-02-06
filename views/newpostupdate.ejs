@@ -23,7 +23,7 @@
                     <div class="container-fluid" style="align-content: center">
                         <h1>Insira uma nova postagem</h1>
                     </div>
-                    <form action="/newpost" method="post">
+                    <form action="/newpost/update" method="post">
                         <div class="form-group " style="padding: 20px;">
                             <label for="title">Insira o Titulo do seu artigo</label>
                             <input type="text" name="title" value="<%= title %>" class="form-control" id="title" aria-describedby="titleHelp"
@@ -42,19 +42,11 @@
                             <textarea rows="20" type="content" name="content" class="form-control" id="content"
                                 aria-describedby="contentHelp"
                                 placeholder="Insira o conteudo da sua postagem"><%= content %></textarea>
-                            <button type="submit" class="btn btn-primary" style="padding: 20px;">Cadastrar</button>
+                            <button type="submit" class="btn btn-primary" style="padding: 20px;">Postar Artigo</button>
                         </div>
 
                     </form>
-                    <button onclick="grammarCorrection()" class="btn btn-primary" style="padding: 20px;">Correcao
-                        Gramatical</button>
-                    <script>
-                        function grammarCorrection() {
-                            document.getElementById("content").value = "<%= content %>";
-                            console.log("feito");
-                            
-                        }
-                    </script>
+                    
 
                 </div>
 

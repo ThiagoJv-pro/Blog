@@ -17,40 +17,47 @@ router.get('/', async function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-var title="";
-var subtitle="";
+
+ 
+var formData = {};
 var doc = "";
-router.get("/newpost", async function (req, res) {
+router.get("/newpost",  async function (req, res) {
   
   res.render("newpost", { title: "Tela de Postagem", action: "/newpost"})
-  cont ++ ;
 
-}).post("/newpost", async function (req, res) {
-   title = req.body.title;
-   subtitle = req.body.subtitle;
+}).post("/newpost",async function (req, res) {
+  var title = req.body.title;
+  var subtitle = req.body.subtitle;
   var content = req.body.content;
   var date = new Date();
-  var newPost = await mongoose.registerPost({
-    title: title,
-    subtitle: subtitle,
-    content: content,
-    date: date.toUTCString(),
-    count: cont
-  });
-  doc = await completion.returnCorrect(content);
   
-  console.log("Saved Successfully");
+  doc = await completion.returnCorrect(content);
+  res.redirect("/newpost/update/");
+  formData["title"] = title;
+  formData["subtitle"] = subtitle;
+  formData["content"] = content;
+  formData["date"] = date;
+
+}).get("/newpost/update/", async function(req, res){
+  doc = doc;
+  res.render("newpostupdate", { title: "Tela de Postagem", action: "/newpost", title: formData.title, subtitle: formData.subtitle, content: doc})
+}).post("/newpost/update/", async function(req, res){
+
+  const maxOrder = await mongoose.registerPost.find().sort({order: -1}).limit(1).exec();
+  const newOrder = maxOrder.length > 0 ? maxOrder[0].order + 1 : 1;
+  var newPost = await mongoose.registerPost({
+    title: formData.title,
+    subtitle: formData.subtitle,
+    content: doc,
+    date: formData.date,
+    order: newOrder
+  });
+  
   await newPost.save();
+  console.log("Saved Successfully");
   res.redirect("/homepage");
 
-}).get("/newpost/update/:_id", async function(req, res){
-  doc = doc;
-  // var db = mongoose.registerPost;
-  // var id = req.params._id;
-  // var dbid = db.findById({_id: id})
-  res.render("newpostupdate", { title: "Tela de Postagem", action: "/newpost", title: title, subtitle: subtitle, content: doc})
-})
-
+});
 
  
 
@@ -91,13 +98,15 @@ router.post('/', async function (req, res) {
 
 router.get('/homepage', async function (req, res) {
   let post = mongoose.registerPost;
-  
+  var count = await post.countDocuments({__v : 0})
+  console.log(Math.floor(Math.random(1) * count));
+
   res.render("home", {
     title: "HomePage", 
-    doc1: await post.findOne({count: {$eq: 1}}), 
-    doc2: await post.findOne({count: {$eq: 6}}), 
-    doc3: await post.findOne({count: {$eq: 2}}),
-    doc4: await post.findOne({count: {$eq: 3}})
+    doc1: await post.findOne({order: {$eq: Math.floor(Math.random(1) * count)}}), 
+    doc2: await post.findOne({order: {$eq: Math.floor(Math.random(1) * count)}}), 
+    doc3: await post.findOne({order: {$eq: Math.floor(Math.random(1) * count)}}),
+    doc4: await post.findOne({order: {$eq: Math.floor(Math.random(1) * count)}})
   })
 })
 

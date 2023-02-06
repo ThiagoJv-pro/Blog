@@ -24,7 +24,7 @@ const postSchema = new schema({
     subtitle: String,
     content: String,
     date: String,
-    count: {type: Number, default:0}
+    order: {type: Number, required: true}
 }, {collection: "posts"});
 
 const registerPost = mongoose.model("registerPost", postSchema);
