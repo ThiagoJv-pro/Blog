@@ -3,7 +3,7 @@ const schema = mongoose.Schema;
 require('dotenv').config();
 
 
-//DB conection configuration
+//DB connectionconfiguration
 const uri = process.env.DATABASE_URL;
 
 mongoose.connect(uri, {

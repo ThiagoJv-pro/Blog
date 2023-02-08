@@ -1,6 +1,6 @@
 const {Configuration, OpenAIApi} = require("openai");
 
-//API OPENAI CONFIGURATION
+//API OPENAI CONFIGURATION documentation: https://platform.openai.com/docs/introduction
 async function returnCorrect( text ){
 const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
