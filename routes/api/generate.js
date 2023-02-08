@@ -1,7 +1,7 @@
 const {Configuration, OpenAIApi} = require("openai");
 
 //API OPENAI CONFIGURATION documentation: https://platform.openai.com/docs/introduction
-async function returnCorrect( text ){
+async function CorrectReturn( text ){
 const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
   })
@@ -18,4 +18,4 @@ const configuration = new Configuration({
     completionReturn = completion.data.choices[0].text;
     return completionReturn
 }
-module.exports = {returnCorrect}
+module.exports = {CorrectReturn}

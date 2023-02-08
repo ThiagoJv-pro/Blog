@@ -32,7 +32,7 @@ router.get("/newpost",  async function (req, res) {
   /* doc: Recebe a função ReturnCorrect passando como parametro a 
   variavel content, realizando assim a ação da API DO OPENAI corrigindo 
   ortograficamente o valor de content e salvando na variavel doc  */
-  doc = await completion.returnCorrect(content);
+  doc = await completion.CorrectReturn(content);
 
   res.redirect("/newpost/update/");
   formData["title"] = title;
