@@ -5,9 +5,12 @@ Esse projeto foi desenvolvido utilizando Node.js e Express. Esta aplicação web
 <img width="945" alt="image" src="https://user-images.githubusercontent.com/54116959/219514752-1bd7efc1-3e85-418d-b18d-4f7c204f0ef1.png">
 
 
-A seguir, temos uma breve demonstração de como o modelo text-davinci-003 atua na aplicação: 
+## A seguir, temos uma breve demonstração de como o modelo text-davinci-003 atua na aplicação: ## 
 
 https://user-images.githubusercontent.com/54116959/232806513-87e1d3ed-6a36-4b60-b7ae-7bace4a07e8c.mp4
+
+
+### Código de implementação da API: ###
 
 ```
 const { Configuration, OpenAIApi } = require("openai");
